@@ -1,0 +1,414 @@
+:root {
+  --clr-black: hsl(0 0% 0%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-pink: hsl(338, 97%, 59%);
+  --clr-dark-pink: hsl(285, 63%, 48%);
+  --clr-light-blue: hsl(182, 65%, 62%);
+  --clr-dark-blue: hsl(209, 86%, 55%);
+
+  --ff-primary: 'EuclidCircular' ;
+  --ff-secondary: 'Gobold';
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Gobold';
+    src: url('/assets/font/Gobold/Gobold\ Regular.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EuclidCircular';
+    src: url('/assets/font/EuclidCircular/Euclid\ Circular\ A\ Regular.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove default button styles */
+button {
+  background-color: transparent;
+  border: none;
+
+  font-size: 1rem;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+  min-height: 100vh;
+
+  font-family: var(--ff-primary);
+  font-size: 16px;
+  color: var(--clr-white);
+
+  background-color: var(--clr-black);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -------------   */
+/* Layout          */
+/* -------------   */
+.container {
+  max-width: 85rem;
+  width: 100%;
+
+  margin-inline: auto;
+  padding-inline: 0.875rem;
+}
+
+/* -------------   */
+/* Utilities       */
+/* -------------   */
+.grid {
+  display: grid;
+}
+
+.column-2{
+  grid-template-columns: 1fr 1.6fr;
+}
+
+.flex {
+  display: grid;
+  column-gap: 0.875rem;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+/* -------------   */
+/* Colors          */
+/* -------------   */
+.black {
+  color: var(--clr-black);
+}
+
+.white {
+  color: var(--clr-white);
+}
+
+.dark-pink {
+  color: var(--clr-dark-pink);
+}
+
+.light-pink {
+  color: var(--clr-light-pink);
+}
+
+.dark-blue {
+  color: var(--clr-dark-blue);
+}
+
+.light-blue {
+  color: var(--clr-light-blue);
+}
+
+/* -----------------------  */
+/* Background Colors        */
+/* -----------------------  */
+.bg-black {
+  background-color: var(--clr-black);
+}
+
+.bg-white {
+  background-color: var(--clr-white);
+}
+
+.bg-dark-pink {
+  background-color: var(--clr-dark-pink);
+}
+
+.bg-light-pink {
+  background-color: var(--clr-light-pink);
+}
+
+.bg-dark-blue {
+  background-color: var(--clr-dark-blue);
+}
+
+.bg-light-blue {
+  background-color: var(--clr-light-blue);
+}
+
+.bg-gradient-blue {
+  background-image: linear-gradient(104deg, var(--clr-light-blue) 0%, var(--clr-dark-blue) 100%);
+}
+
+.bg-gradient-pink {
+  background-image: linear-gradient(104deg, var(--clr-light-pink) 0%, var(--clr-dark-pink) 100%);
+}
+
+
+/* -------------   */
+/* Buttons         */
+/* -------------   */
+.btn {
+  position: relative;
+  z-index: 1;
+
+  padding: 1rem 1.8rem;
+
+  border-radius: 0.875rem;
+
+  background-color: var(--clr-dark-blue);
+  color: var(--clr-white);
+}
+
+.btn.btn-white {
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+}
+
+.btn.btn-dark-pink {
+  background-color: var(--clr-dark-pink);
+}
+
+.btn.btn-light-pink {
+  background-color: var(--clr-light-pink);
+}
+
+.btn.btn-dark-blue {
+  background-color: var(--clr-dark-blue);
+}
+
+.btn.btn-light-blue {
+  background-color: var(--clr-light-blue);
+}
+
+.btn.btn-gradient-blue {
+  background-image: linear-gradient(104deg, var(--clr-light-blue) -10%, var(--clr-dark-blue) 110%);
+}
+
+.btn.btn-gradient-pink {
+  background-image: linear-gradient(104deg, var(--clr-light-pink) -10%, var(--clr-dark-pink) 100%);
+}
+
+/* Hover States */
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn.btn-gradient-blue::before {
+  content:"";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+
+  opacity: 0;
+
+  border-radius: 0.875rem;
+
+  background-image: linear-gradient(104deg, var(--clr-dark-blue) -10%, var(--clr-light-blue) 110%);
+
+  transition: opacity 0.3s linear;
+}
+
+.btn.btn-gradient-blue:hover::before {
+  opacity: 1;
+}
+
+.btn.btn-gradient-pink::before {
+  content:"";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+
+  opacity: 0;
+
+  border-radius: 0.875rem;
+
+  background-image: linear-gradient(104deg, var(--clr-dark-pink) -10%, var(--clr-light-pink) 110%);
+
+  transition: opacity 0.3s linear;
+}
+
+.btn.btn-gradient-pink:hover::before {
+  opacity: 1;
+}
+
+
+/* -------------   */
+/* Typography      */
+/* -------------   */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6  .h6{
+  font-family: var(--ff-secondary);;
+  text-transform: uppercase;
+}
+
+h1, .h1 {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+}
+
+h2, .h2 {
+  font-size: clamp(2.125rem, 3.4vw, 3.825rem);
+}
+
+h3, .h3 {
+  font-size: clamp(1.8rem, 2.89vw, 3.25rem);
+}
+
+h4, .h4 {
+  font-size: clamp(1.5725rem, 2.4565vw, 2.7625rem);
+}
+
+h5, .h5 {
+  font-size: clamp(1.3366rem, 2vw, 2.7625rem);
+}
+
+h6, .h6 {
+  font-size: clamp(1.13rem, 1.7vw, 2.35rem);
+}
+
+p {
+  font-size: clamp(1rem, 1.1vw, 1.4rem);
+}
+
+/* -----------------------  */
+/* #DevelopingTools         */
+/* -----------------------  */
+
+#DevelopingTools > article > *:not(:last-child) {
+  padding-bottom: 1rem;
+}
+
+#DevelopingTools > article > .buttons {
+  display: flex;
+  column-gap: 2rem;
+}
+
+#DevelopingTools > #showcase {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  align-self: center;
+  justify-self: stretch;
+  align-items: stretch;
+  gap: 1rem;
+
+  transform: perspective(1000px) rotateY(-40deg) translateX(-3.5rem);
+
+}
+
+#DevelopingTools > #showcase .showcase-item {
+  border: 1px solid transparent;
+  border-radius: 20px;
+  transition: transform 0.3s linear;
+}
+
+#DevelopingTools > #showcase .showcase-item:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 0 1rem var(--clr-white);
+}
+
+#DevelopingTools > #showcase .showcase-item-1, 
+#DevelopingTools > #showcase .showcase-item-4,
+#DevelopingTools > #showcase .showcase-item-5,
+#DevelopingTools > #showcase .showcase-item-7 {
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+
+#DevelopingTools > #showcase .showcase-item-2, 
+#DevelopingTools > #showcase .showcase-item-3 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+
+#DevelopingTools > #showcase .showcase-item-6 {
+  grid-column: 2 / 4;
+  grid-row: 3 / span 4;
+}
